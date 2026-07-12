@@ -29,6 +29,10 @@ class Controller:
         self._view.create_alert("Attenzione: deve essere Chromosoma min <= Chromosoma max")
         return
 
+    if k <= 0:
+    self._view.create_alert("K deve essere maggiore di zero")
+    return
+
     # controlli da fare in crea grafo nel caso di tendina
 
     try:
