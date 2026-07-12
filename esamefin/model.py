@@ -445,6 +445,17 @@ def getPesoMassimoIncidente(self, nodo):
 
     return max_peso
 
+def getTop5PesoMassimoIncidente(self):
+    result = []
+
+    for nodo in self._graph.nodes():
+        peso_max = self.getPesoMassimoIncidente(nodo)
+        result.append((nodo, peso_max))
+
+    result.sort(key=lambda x: x[1], reverse=True)
+
+    return result[:5]
+
 #IN QUESTO CASO DETAILS RESTITUISCE COMPONENTE MAGGIORE
 #ORDINATA PER NODI CON PESO ARCHI MAGGIORE
 def getConnessaInfo(self):
@@ -468,6 +479,7 @@ def getConnessaInfo(self):
 data1 = datetime.strptime(datadainseriredaoggetto, "%Y-%m-%d %H:%M:%S")
                           #TRASFORMO DATA IN NUMERO SOTTRAIBILE solo nel caso in cui datainserireoggetto sia stringa e non gia datetime
                           se faccio sottraggo due datetime posso fare .years .days o altro ottengo intero
+diff = abs((o1.order_date - o2.order_date).days)
 
 
 lista1 = [1, 2, 3]
