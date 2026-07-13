@@ -335,4 +335,5 @@ def getRisultatiForConstructor(constructor, year1, year2):
 timestampdiff(year, n.date_of_birth, curdate()) as age
 calcolare eta dal dao
 ABS(TIMESTAMPDIFF(DAY, o1.order_date, o2.order_date)) < %s
+ABS(DATEDIFF(o1.order_date, o2.order_date)) <= %s
 
