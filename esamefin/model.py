@@ -539,3 +539,14 @@ def getConnessaInfo(self):
     result.sort(key=lambda x: x[1], reverse=True)
 
     return result
+
+
+def getTop5ArchiIncidenti(self, nodo):
+    archi = []
+
+    for n1, n2, data in self._graph.edges(nodo, data=True):
+        archi.append((n1, n2, data["weight"]))
+
+    archi.sort(key=lambda x: x[2], reverse=True)
+
+    return archi[:5]
