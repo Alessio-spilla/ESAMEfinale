@@ -31,3 +31,9 @@ class Driver:
     def __str__(self):
         return f"{self.driverRef} ({self.driverId} - DoF: {self.dob})"
     #stampa Nome (id - DoF: dataN)
+
+    def __hash__(self):
+        return hash((self.GeneID, self.Function))
+
+def __eq__(self, other):
+    return self.GeneID == other.GeneID and self.Function == other.Function
